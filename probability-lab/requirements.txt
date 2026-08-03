@@ -1,0 +1,32 @@
+# Python Ortamı — Probability Lab
+# pip install -r requirements.txt
+
+# Temel bilim kütüphaneleri
+numpy>=1.24
+scipy>=1.10
+pandas>=2.0
+matplotlib>=3.7
+seaborn>=0.12
+
+# Jupyter
+jupyterlab>=4.0
+notebook>=7.0
+
+# R entegrasyonu
+rpy2>=3.5
+
+# SQL entegrasyonu
+duckdb>=0.10
+ipython-sql>=0.5
+sqlalchemy>=2.0
+
+# İstatistik & ML
+scikit-learn>=1.3
+statsmodels>=0.14
+
+# Bayesian
+pymc>=5.0
+arviz>=0.17
+
+# Finans verisi (Monte Carlo için)
+yfinance>=0.2
