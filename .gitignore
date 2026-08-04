@@ -211,3 +211,8 @@ __marimo__/
 *.png
 *.xml
 *.iml
+probability-lab/02_discrete_distributions/data/311_Service_Requests_from_2010_to_Present.csv
+.gitignore
+probability-lab/.Rhistory
+.DS_Store
+.DS_Store
