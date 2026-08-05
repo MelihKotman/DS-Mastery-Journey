@@ -260,8 +260,8 @@ probability-lab/
 **📦 Dataset:**
 | Dataset | Kaynak | Kullanım |
 |---|---|---|
-| US Income (CPS) | [IPUMS](https://cps.ipums.org) | Gelir → Log-Normal |
-| Web Session Duration | [Kaggle E-Commerce](https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-multi-category-store) | Session süresi → Log-Normal |
+| UCI Machine Learning 1994 Census Bureau Adult Income | [Kaggle Adult Income](https://www.kaggle.com/datasets/uciml/adult-census-income)   | Gelir → Log-Normal |
+| Web Session Duration | [Kaggle E-Commerce Electronic Store](https://www.kaggle.com/datasets/mkechinov/ecommerce-purchase-history-from-electronics-store) | Session süresi → Log-Normal |
 | Beta simülasyonu | Synthetic | Prior elicitation |
 
 ---
