@@ -332,7 +332,7 @@ probability-lab/
 |---|---|---|
 | Anscombe Quartet | `seaborn.load_dataset("anscombe")` | Kovaryans yanıltıcılığı |
 | S&P 500 Stocks | `yfinance` / [Kaggle](https://www.kaggle.com/datasets/camnugent/sandp500) | Hisse kovaryans matrisi |
-| WHO Health Stats | [WHO](https://www.who.int/data) | Ülke sağlık göstergeleri |
+| Global Health Indicators | [Kaggle](https://www.kaggle.com/datasets/bushraqurban/world-health-indicators-dataset) | Ülke sağlık göstergeleri |
 
 ---
 
