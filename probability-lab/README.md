@@ -570,7 +570,7 @@ probability-lab/
 **📦 Dataset:**
 | Dataset | Kaynak | Kullanım |
 |---|---|---|
-| Survival Analysis | [SEER](https://seer.cancer.gov) | Hayatta kalma MLE/MAP |
+| Global Cancer Patients (2015-2024) | [Kaggle](https://www.kaggle.com/datasets/zahidmughal2343/global-cancer-patients-2015-2024) | Hayatta kalma MLE/MAP |
 | Airbnb Prices | [Kaggle](https://www.kaggle.com/datasets/dgomonov/new-york-city-airbnb-open-data) | Lognormal MLE/MAP fit |
 | Insurance Claims | [Kaggle](https://www.kaggle.com/datasets/mirichoi0218/insurance) | Normal/Gamma MLE/MAP |
 
