@@ -37,7 +37,6 @@ probability-lab/
 │   └── data/
 ├── 08_inference/
 │   ├── mle_estimation.ipynb
-│   ├── map_estimation.ipynb
 │   └── data/
 ├── 09_information_theory/
 │   ├── entropy_kl_divergence.ipynb
@@ -508,11 +507,9 @@ probability-lab/
 
 ---
 
-### 08a · MLE (`mle_estimation.ipynb`)
+### 08 · MLE and MAP (`mle_map_estimation.ipynb`)
 
 ```
-# 14. Maximum Likelihood Estimation (MLE)
-
 ## 14.1 Teorik Özet (Markdown)
    - L(θ|x) = Π f(xᵢ|θ) — likelihood fonksiyonu
    - Log-likelihood: ℓ(θ) = Σ log f(xᵢ|θ)
@@ -527,18 +524,56 @@ probability-lab/
    - OLS'in istatistiksel yorumu
 
 ## 14.4 [R] fitdistr() (MASS paketi)
-
+ 
 ## 14.5 [SQL] MLE'nin SQL analogu — MAP ile karşılaştır
+ 
+## 14.6 Maximum A Posteriori (MAP) Estimation
+ 
+### 14.6.1 Teorik Özet (Markdown)
+   - Bayes teoremi: p(θ|x) ∝ L(x|θ) · p(θ) — posterior ∝ likelihood × prior
+   - MAP: θ̂_MAP = argmax [log L(x|θ) + log p(θ)]
+   - MLE, MAP'in özel bir hali: prior düz (uniform) olduğunda θ̂_MAP = θ̂_MLE
+   - Prior seçimi = regularizasyon:
+     - Gauss prior → L2 regularizasyon (Ridge) ile eşdeğer
+     - Laplace prior → L1 regularizasyon (Lasso) ile eşdeğer
+   - Konjuge prior örnekleri (kapalı form MAP çözümleri):
+     - Binomial likelihood + Beta prior → Beta posterior
+     - Normal likelihood (bilinen varyans) + Normal prior → Normal posterior
+     - Poisson likelihood + Gamma prior → Gamma posterior
+   - Karşılaştırma tablosu:
+     | | MLE | MAP |
+     |---|---|---|
+     | Optimize edilen | L(x\|θ) | L(x\|θ)·p(θ) |
+     | Prior bilgi | Yok | Var |
+     | Küçük örneklemde | Overfit'e yatkın | Prior ile stabilize |
+     | n → ∞ | θ̂_MLE | θ̂_MAP → θ̂_MLE (prior etkisi kaybolur) |
 
-## 14.6 Egzersiz: Gerçek veri ile Exponential MLE
+### 14.6.2 [PYTHON] MAP — Adım Adım
+   - Beta-Binomial örneği: farklı prior'larla (uniform, informative) posterior'u hesaplama
+   - Prior, likelihood ve posterior eğrilerini aynı grafikte görselleştirme
+   - scipy.optimize.minimize ile numerik MAP (negatif log-posterior'u minimize etme)
+   - Küçük örneklem büyüklüğünde MLE vs MAP karşılaştırması (prior'ın etkisini gösteren duyarlılık analizi)
+
+### 14.6.3 [PYTHON] MAP = Regularize Regresyon Bağlantısı
+   - Ridge regresyonun Gauss prior ile Bayesçi yorumu
+   - Lasso regresyonun Laplace prior ile Bayesçi yorumu
+   - scikit-learn Ridge/Lasso çıktılarını kapalı form MAP çözümüyle doğrulama
+
+### 14.6.4 [R] MAP hesaplama (optim() ve LaplacesDemon/bayesm paketleri)
+ 
+### 14.6.5 [SQL] Konjuge prior güncellemesini SQL'de simüle etme (Beta-Binomial örneği, agregasyon ile)
+ 
+## 14.7 Egzersiz: Gerçek veri ile Exponential MLE vs MAP
+   - Aynı veri seti üzerinde hem MLE hem MAP (Gamma prior ile) tahmini yapıp karşılaştırma
 ```
-
+ 
 **📦 Dataset:**
 | Dataset | Kaynak | Kullanım |
 |---|---|---|
-| Survival Analysis | [SEER](https://seer.cancer.gov) | Hayatta kalma MLE |
-| Airbnb Prices | [Kaggle](https://www.kaggle.com/datasets/dgomonov/new-york-city-airbnb-open-data) | Lognormal MLE fit |
-| Insurance Claims | [Kaggle](https://www.kaggle.com/datasets/mirichoi0218/insurance) | Normal/Gamma MLE |
+| Survival Analysis | [SEER](https://seer.cancer.gov) | Hayatta kalma MLE/MAP |
+| Airbnb Prices | [Kaggle](https://www.kaggle.com/datasets/dgomonov/new-york-city-airbnb-open-data) | Lognormal MLE/MAP fit |
+| Insurance Claims | [Kaggle](https://www.kaggle.com/datasets/mirichoi0218/insurance) | Normal/Gamma MLE/MAP |
+
 
 ---
 
