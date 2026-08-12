@@ -36,7 +36,7 @@ probability-lab/
 │   ├── conjugate_priors.ipynb
 │   └── data/
 ├── 08_inference/
-│   ├── mle_estimation.ipynb
+│   ├── mle_map_estimation.ipynb   
 │   └── data/
 ├── 09_information_theory/
 │   ├── entropy_kl_divergence.ipynb
@@ -48,7 +48,7 @@ probability-lab/
 ```
 
 > **Hücre kuralı**: Her notebook'ta sırayla Python → R → SQL hücreleri.  
-> Magic: `%%R` (rpy2), `%%sql` (ipython-sql / DuckDB).
+> Magic: `%%R` (rpy2), doğrudan Python içinde `duckdb.connect()` (ipython-sql yerine bu kullanıldı).
 
 ---
 
@@ -457,7 +457,7 @@ probability-lab/
 ## 12.3 [PYTHON] Spam Filtresi — Naive Bayes
    - sklearn.naive_bayes.MultinomialNB
 
-## 12.4 [R] bayesAB paketi
+## 12.4 [R] Base R (dbeta/rbeta) — bayesAB paketi kullanılmadı, bkz. § Gerçekleşen Değişiklikler
 
 ## 12.5 [SQL] Koşullu olasılık tablosu + Bayes el hesabı
 
@@ -491,9 +491,9 @@ probability-lab/
 ## 13.3 [PYTHON] Gamma-Poisson ile λ Tahmini
    - Çağrı merkezi: λ'yı öğren
 
-## 13.4 [R] bayesplot paketi
+## 13.4 [R] Base R (dgamma/dnorm) — bayesplot paketi kullanılmadı
 
-## 13.5 [SQL] N/A (teorik → Python/R odaklı bölüm)
+## 13.5 [SQL] N/A (teorik → Python/R odaklı bölüm) — GERÇEKLEŞEN: SQL de eklendi (posterior parametre hesabı)
 
 ## 13.6 Egzersiz: Website conversion rate — Beta-Binomial ile canlı güncelleme
 ```
@@ -559,7 +559,7 @@ probability-lab/
    - Lasso regresyonun Laplace prior ile Bayesçi yorumu
    - scikit-learn Ridge/Lasso çıktılarını kapalı form MAP çözümüyle doğrulama
 
-### 14.6.4 [R] MAP hesaplama (optim() ve LaplacesDemon/bayesm paketleri)
+### 14.6.4 [R] MAP hesaplama — GERÇEKLEŞEN: optim() + kapalı-form formüller (LaplacesDemon/bayesm kullanılmadı)
  
 ### 14.6.5 [SQL] Konjuge prior güncellemesini SQL'de simüle etme (Beta-Binomial örneği, agregasyon ile)
  
@@ -572,8 +572,7 @@ probability-lab/
 |---|---|---|
 | Global Cancer Patients (2015-2024) | [Kaggle](https://www.kaggle.com/datasets/zahidmughal2343/global-cancer-patients-2015-2024) | Hayatta kalma MLE/MAP |
 | Airbnb Prices | [Kaggle](https://www.kaggle.com/datasets/dgomonov/new-york-city-airbnb-open-data) | Lognormal MLE/MAP fit |
-| Insurance Claims | [Kaggle](https://www.kaggle.com/datasets/mirichoi0218/insurance) | Normal/Gamma MLE/MAP |
-
+| Insurance Claims | [Kaggle](https://www.kaggle.com/datasets/mirichoi0218/insurance) | Normal/Gamma MLE/MAP — ⚠️ bu dosya 10_simulation'da da gerekiyor |
 
 ---
 
@@ -596,7 +595,7 @@ probability-lab/
 ## 15.3 [PYTHON] Cross-Entropy Loss → Neural Net Bağlantısı
    - Binary classification loss hesabı
 
-## 15.4 [R] entropy paketi
+## 15.4 [R] Base R (elle yazılmış entropy_r fonksiyonu) — entropy paketi kullanılmadı
 
 ## 15.5 [SQL] Entropi hesabı (metin sınıflandırma)
    - Karar ağacı split kriteri
@@ -607,9 +606,9 @@ probability-lab/
 **📦 Dataset:**
 | Dataset | Kaynak | Kullanım |
 |---|---|---|
-| MNIST (class dist.) | `sklearn.datasets` | Etiket dağılımı entropisi |
-| Text Classification | [20 Newsgroups](https://scikit-learn.org/stable/datasets/real_world.html#newsgroups-dataset) | Metin sınıf entropisi |
-| Language Model Outputs | HuggingFace | KL divergence iki model arası |
+| Digit Recognizer | [Kaggle](https://www.kaggle.com/competitions/digit-recognizer/data) | Sınıf Dağılımı Entropisi + Cross-Entropy Loss |
+| Mushroom Classification | [Kaggle](https://www.kaggle.com/datasets/uciml/mushroom-classification) | Karar Ağacı "Information Gain" (Entropi Azalması) |
+| SMS Spam Collection | [Kaggle](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset) | KL divergence |
 
 ---
 
@@ -631,7 +630,7 @@ probability-lab/
    - Portföy değeri dağılımı (Geometric Brownian Motion)
    - Value at Risk (VaR) hesabı
 
-## 16.4 [R] replicate() + Shiny widget
+## 16.4 [R] replicate() — GERÇEKLEŞEN: Shiny widget kullanılmadı, statik plot yeterli oldu
 
 ## 16.5 [SQL] Pseudo-random ile basit Monte Carlo
 
@@ -641,8 +640,8 @@ probability-lab/
 **📦 Dataset:**
 | Dataset | Kaynak | Kullanım |
 |---|---|---|
-| S&P 500 Returns | `yfinance` | Portföy simülasyonu |
-| Insurance Claims | [Kaggle](https://www.kaggle.com/datasets/mirichoi0218/insurance) | Risk simülasyonu |
+| S&P 500 Returns | `yfinance` | Portföy simülasyonu (yfinance yoksa kod otomatik sentetik parametrelere düşer) |
+| Insurance Claims | [Kaggle](https://www.kaggle.com/datasets/mirichoi0218/insurance) | Risk simülasyonu — ⚠️ 08_inference'daki dosyanın kopyası |
 | Casino Game Simulation | Synthetic | House edge gösterimi |
 
 ---
@@ -665,9 +664,9 @@ probability-lab/
 ## 17.3 [PYTHON] Korelasyon Bootstrap CI
    - scipy.stats.bootstrap
 
-## 17.4 [R] boot paketi
+## 17.4 [R] replicate() — GERÇEKLEŞEN: boot paketi kullanılmadı
 
-## 17.5 [SQL] Bootstrap analogu — TABLESAMPLE
+## 17.5 [SQL] Bootstrap analogu — GERÇEKLEŞEN: TABLESAMPLE yerine rastgele satır numarası + JOIN kalıbı (gerçek "yerine koyarak" örnekleme için)
 
 ## 17.6 Egzersiz: Gerçek veri ile medyan CI hesabı
 ```
@@ -676,8 +675,7 @@ probability-lab/
 | Dataset | Kaynak | Kullanım |
 |---|---|---|
 | `seaborn.load_dataset("tips")` | Seaborn | Bahşiş medyan CI |
-| Salary Data | [Kaggle](https://www.kaggle.com/datasets/mohithsairamreddy/salary-data) | Maaş medyan bootstrap |
-| Medical Expenses | [Kaggle](https://www.kaggle.com/datasets/mirichoi0218/insurance) | Sağlık harcama CI |
+| Medical Expenses | [Kaggle](https://www.kaggle.com/datasets/mirichoi0218/insurance) | Sağlık harcama CI — ⚠️ 08_inference'daki dosyanın kopyası |
 
 ---
 
@@ -713,3 +711,5 @@ probability-lab/
 | [distill.pub](https://distill.pub) | ML kavramları görsel açıklama |
 | [betanalpha.github.io](https://betanalpha.github.io) | Bayesian teknik yazılar |
 | [machinelearningmastery.com](https://machinelearningmastery.com) | ML odaklı istatistik |
+
+---
