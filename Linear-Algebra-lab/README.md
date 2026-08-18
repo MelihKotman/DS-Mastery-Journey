@@ -173,7 +173,7 @@ linear-algebra-lab/
 **📦 Dataset:**
 | Dataset | Kaynak | Kullanım |
 |---|---|---|
-| [Used Car Price Prediction](https://www.kaggle.com/datasets/asinow/car-price-dataset) | Kaggle | Ridge vs Lasso gerçek katsayı karşılaştırması |
+| [Used Car Price Prediction](https://www.kaggle.com/datasets/taeefnajib/used-car-price-prediction-dataset) | Kaggle | Ridge vs Lasso gerçek katsayı karşılaştırması |
 | Sentetik regresyon verisi | `sklearn.datasets.make_regression()` | Lasso'nun seyreklik özelliğini net göstermek için |
 
 ---
