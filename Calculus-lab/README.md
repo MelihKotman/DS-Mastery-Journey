@@ -1,6 +1,6 @@
 # Calculus Lab — Tam Rehber
-## Yapı · Taslak · Dataset · Kaynaklar
 
+## Yapı · Taslak · Dataset · Kaynaklar
 
 ---
 
@@ -64,10 +64,11 @@ calculus-lab/
 ```
 
 **📦 Dataset:**
-| Dataset | Kaynak | Kullanım |
-|---|---|---|
+
+| Dataset                       | Kaynak                                                                                                                      | Kullanım                                                   |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
 | COVID-19 Günlük Vaka Verisi | [Kaggle — Novel Corona Virus 2019 Dataset](https://www.kaggle.com/datasets/sudalairajkumar/novel-corona-virus-2019-dataset) | Günlük artış hızı = türev, ivmelenme = ikinci türev |
-| Sentetik 2D yüzeyler | `numpy`/`sympy` | Gradyan vektörü görselleştirmesi |
+| Sentetik 2D yüzeyler         | `numpy`/`sympy`                                                                                                         | Gradyan vektörü görselleştirmesi                        |
 
 ---
 
@@ -106,10 +107,11 @@ calculus-lab/
 ```
 
 **📦 Dataset:**
-| Dataset | Kaynak | Kullanım |
-|---|---|---|
-| [Heart Disease (UCI)](https://archive.ics.uci.edu/dataset/45/heart+disease) | UCI | Lojistik regresyon loss yüzeyinin Hessian'ı → konvekslik kanıtı |
-| Sentetik yüzeyler | `numpy`/`sympy` | Konveks vs konveks-olmayan yüzey karşılaştırması |
+
+| Dataset                                                                    | Kaynak              | Kullanım                                                            |
+| -------------------------------------------------------------------------- | ------------------- | -------------------------------------------------------------------- |
+| [Heart Disease (UCI)](https://archive.ics.uci.edu/dataset/45/heart+disease) | UCI                 | Lojistik regresyon loss yüzeyinin Hessian'ı → konvekslik kanıtı |
+| Sentetik yüzeyler                                                         | `numpy`/`sympy` | Konveks vs konveks-olmayan yüzey karşılaştırması               |
 
 ---
 
@@ -142,8 +144,9 @@ calculus-lab/
 ```
 
 **📦 Dataset:**
-| Dataset | Kaynak | Kullanım |
-|---|---|---|
+
+| Dataset     | Kaynak                                         | Kullanım                                                             |
+| ----------- | ---------------------------------------------- | --------------------------------------------------------------------- |
 | `titanic` | `seaborn.load_dataset("titanic")` (built-in) | Minik sinir ağı ile hayatta kalma tahmini, backprop'u elle türetme |
 
 ---
@@ -181,10 +184,11 @@ calculus-lab/
 ```
 
 **📦 Dataset:**
-| Dataset | Kaynak | Kullanım |
-|---|---|---|
-| [Energy Efficiency Dataset (UCI)](https://archive.ics.uci.edu/dataset/242/energy+efficiency) | UCI | Bina enerji tüketimi tahmininde SGD/Momentum/Adam karşılaştırması |
-| Sentetik yüzeyler (Rosenbrock fonksiyonu) | `numpy` | Optimizer'ların zorlu yüzeylerdeki davranış farkları |
+
+| Dataset                                                                                     | Kaynak    | Kullanım                                                               |
+| ------------------------------------------------------------------------------------------- | --------- | ----------------------------------------------------------------------- |
+| [Energy Efficiency Dataset (UCI)](https://archive.ics.uci.edu/dataset/242/energy+efficiency) | UCI       | Bina enerji tüketimi tahmininde SGD/Momentum/Adam karşılaştırması |
+| Sentetik yüzeyler (Rosenbrock fonksiyonu)                                                  | `numpy` | Optimizer'ların zorlu yüzeylerdeki davranış farkları               |
 
 ---
 
@@ -220,10 +224,11 @@ calculus-lab/
 ```
 
 **📦 Dataset:**
-| Dataset | Kaynak | Kullanım |
-|---|---|---|
-| [World Population Dataset](https://www.kaggle.com/datasets/iamsouravbanerjee/world-population-dataset) | Kaggle | Üstel büyüme modelinin Taylor yaklaşıklaması |
-| Bilinen fonksiyonlar (sin, exp) | `numpy`/`sympy` | Taylor serisi yakınsama görselleştirmesi |
+
+| Dataset                                                                                               | Kaynak              | Kullanım                                          |
+| ----------------------------------------------------------------------------------------------------- | ------------------- | -------------------------------------------------- |
+| [World Population Dataset](https://www.kaggle.com/datasets/iamsouravbanerjee/world-population-dataset) | Kaggle              | Üstel büyüme modelinin Taylor yaklaşıklaması |
+| Bilinen fonksiyonlar (sin, exp)                                                                       | `numpy`/`sympy` | Taylor serisi yakınsama görselleştirmesi        |
 
 ---
 
@@ -231,21 +236,21 @@ calculus-lab/
 
 ### Kitaplar
 
-| # | Kitap | Yazar | Ücretsiz? | Bağlantı |
-|---|---|---|---|---|
-| 🥇 | Calculus | Gilbert Strang | ✅ | [MIT OCW](https://ocw.mit.edu/courses/res-18-001-calculus-online-textbook-spring-2005/) |
-| 🥇 | Mathematics for Machine Learning | Deisenroth, Faisal, Ong | ✅ | [mml-book.github.io](https://mml-book.github.io) |
-| 🥈 | Deep Learning (Ch. 4 — Numerical Computation) | Goodfellow, Bengio, Courville | ✅ | [deeplearningbook.org](https://www.deeplearningbook.org) |
-| 🥉 | Convex Optimization | Boyd & Vandenberghe | ✅ | [web.stanford.edu/~boyd/cvxbook/](https://web.stanford.edu/~boyd/cvxbook/) |
+| #  | Kitap                                          | Yazar                         | Ücretsiz? | Bağlantı                                                                             |
+| -- | ---------------------------------------------- | ----------------------------- | ---------- | -------------------------------------------------------------------------------------- |
+| 🥇 | Calculus                                       | Gilbert Strang                | ✅         | [MIT OCW](https://ocw.mit.edu/courses/res-18-001-calculus-online-textbook-spring-2005/) |
+| 🥇 | Mathematics for Machine Learning               | Deisenroth, Faisal, Ong       | ✅         | [mml-book.github.io](https://mml-book.github.io)                                        |
+| 🥈 | Deep Learning (Ch. 4 — Numerical Computation) | Goodfellow, Bengio, Courville | ✅         | [deeplearningbook.org](https://www.deeplearningbook.org)                                |
+| 🥉 | Convex Optimization                            | Boyd & Vandenberghe           | ✅         | [web.stanford.edu/~boyd/cvxbook/](https://web.stanford.edu/~boyd/cvxbook/)              |
 
 ### Kurslar & Görsel Referans
 
-| Kaynak | Kullanım |
-|---|---|
-| [3Blue1Brown — Essence of Calculus](https://www.3blue1brown.com/topics/calculus) | Bu lab'ın TEK EN ÖNEMLİ referansı |
-| [3Blue1Brown — Neural Networks (Backprop bölümleri)](https://www.3blue1brown.com/topics/neural-networks) | Zincir kuralı/backprop için birebir görsel anlatım |
-| [Stanford CS231n — Backpropagation Notları](https://cs231n.github.io/optimization-2/) | Backprop'un "elle türetme" pratiği için klasik referans |
-| [distill.pub — Momentum](https://distill.pub/2017/momentum/) | Momentum/Adam'ın görsel/interaktif anlatımı |
-| [PyTorch `autograd` Dokümantasyonu](https://pytorch.org/docs/stable/autograd.html) | Bu lab'ın 03-04'te kullanılan ana aracı |
+| Kaynak                                                                                                     | Kullanım                                                  |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| [3Blue1Brown — Essence of Calculus](https://www.3blue1brown.com/topics/calculus)                           | Bu lab'ın TEK EN ÖNEMLİ referansı                      |
+| [3Blue1Brown — Neural Networks (Backprop bölümleri)](https://www.3blue1brown.com/topics/neural-networks) | Zincir kuralı/backprop için birebir görsel anlatım     |
+| [Stanford CS231n — Backpropagation Notları](https://cs231n.github.io/optimization-2/)                     | Backprop'un "elle türetme" pratiği için klasik referans |
+| [distill.pub — Momentum](https://distill.pub/2017/momentum/)                                               | Momentum/Adam'ın görsel/interaktif anlatımı            |
+| [PyTorch `autograd` Dokümantasyonu](https://pytorch.org/docs/stable/autograd.html)                       | Bu lab'ın 03-04'te kullanılan ana aracı                 |
 
 ---
